@@ -1,0 +1,50 @@
+# do this process forever
+
+    # get links from database
+    # if number of links in database is >= max links
+    # print max limit reached
+    # ignore everything and continue
+
+    # for each link
+
+        # if link is crawled in last 24 hours then
+        # ignore this link and continue
+
+        # if link is not crawled at all or it is not crawled in last 24 hours then
+        # do the web request
+
+        # check the status code
+            # if status code is not 200 then
+            # mark link as iscrawled = true and continue with next link
+
+        # find out content type of response
+            # if content type is html
+            # extract <a href=""> links
+            # save all links to database
+            # save file on disk
+            # save_file("","")
+            # mark links as iscrawled = true and continue with next link
+
+            # if content type is not html
+            # based on content type, create a file name eg: xxxx.mp4
+            # save the file on disk
+            # save_file("","")
+            # mark links as iscrwaled = true and continue with next link
+            # mark_link_crawled(link, r.status_code)
+
+    # sleep for 5 seconds
+
+
+
+{
+    "_id" : ObjectId("5f460be0aec1175a36206478"),
+    "link" : "https://flinkhub.com",
+    "sourceLink" : "",
+    "isCrawled" : false,
+    "lastCrawlDt" : null,
+    "responseStatus" : 0,
+    "contentType" : "",
+    "contentLength" : 0,
+    "filePath" : "",
+    "createdAt" : ISODate("2020-08-26T12:44:00.000Z")
+}
